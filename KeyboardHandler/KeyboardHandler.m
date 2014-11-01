@@ -101,8 +101,6 @@
         scrollAmount = -keyboardHieght - targetView.frame.origin.y;
     }
     
-    NSLog(@"%lf, %lf, %lf, %lf", scrollAmount, keyboardRect.size.height, targetView.frame.size.height,targetView.bounds.size.height);
-    
     [UIView animateWithDuration:0.2 delay:0.0 options:curve animations:
      ^{
          CGRect rect = targetView.frame;
