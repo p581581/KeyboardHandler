@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="316"/>
         </scene>
-        <!--View Controller-->
+        <!--Demo-->
         <scene sceneID="ZJE-SH-Suj">
             <objects>
-                <viewController id="IqI-vs-iPC" sceneMemberID="viewController">
+                <viewController id="IqI-vs-iPC" customClass="Demo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zxa-fh-1hs"/>
                         <viewControllerLayoutGuide type="bottom" id="028-Bu-BHH"/>
@@ -254,10 +254,10 @@
             </objects>
             <point key="canvasLocation" x="1035" y="-451"/>
         </scene>
-        <!--View Controller-->
+        <!--Demo-->
         <scene sceneID="ZDR-FY-W57">
             <objects>
-                <viewController id="ZHR-j3-Mtp" sceneMemberID="viewController">
+                <viewController id="ZHR-j3-Mtp" customClass="Demo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J0t-Va-afi"/>
                         <viewControllerLayoutGuide type="bottom" id="dur-nY-bs2"/>
@@ -298,6 +298,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vCe-N1-PKd"/>
+                    <connections>
+                        <outlet property="textField1" destination="RFe-vR-cvT" id="dRC-HQ-duC"/>
+                        <outlet property="textField2" destination="9ol-bo-Db7" id="QXL-uB-BYK"/>
+                        <outlet property="textField3" destination="AZt-nB-gJY" id="Zbg-K3-6MP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wg-7e-ikh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -306,7 +311,7 @@
         <!--Item2-->
         <scene sceneID="ni9-nO-gjz">
             <objects>
-                <viewController id="l5d-dF-cjJ" sceneMemberID="viewController">
+                <viewController id="l5d-dF-cjJ" customClass="Demo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2hw-ko-47a"/>
                         <viewControllerLayoutGuide type="bottom" id="1G2-in-5SZ"/>
@@ -347,6 +352,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item2" id="eAs-YH-OYb"/>
+                    <connections>
+                        <outlet property="textField1" destination="mVJ-cv-LMa" id="gYH-h0-m8X"/>
+                        <outlet property="textField2" destination="d9a-FK-Bgy" id="jZ7-Zg-r7X"/>
+                        <outlet property="textField3" destination="hjq-MD-UGy" id="oRW-hq-Rzm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnl-uf-wYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,7 +365,7 @@
         <!--Item1-->
         <scene sceneID="XOj-EZ-hrx">
             <objects>
-                <viewController id="6Jp-dj-BY6" sceneMemberID="viewController">
+                <viewController id="6Jp-dj-BY6" customClass="Demo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gvs-y3-fVy"/>
                         <viewControllerLayoutGuide type="bottom" id="EnQ-Fc-TR7"/>
@@ -397,6 +407,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item1" id="D04-tU-J7D"/>
                     <navigationItem key="navigationItem" id="hMR-tb-twj"/>
+                    <connections>
+                        <outlet property="textField1" destination="Mpg-Xh-Akx" id="zXK-M9-bNl"/>
+                        <outlet property="textField2" destination="kPP-Sp-xQD" id="haJ-DK-QEh"/>
+                        <outlet property="textField3" destination="WcG-qr-mhM" id="olh-LB-ES9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unV-Am-4QX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

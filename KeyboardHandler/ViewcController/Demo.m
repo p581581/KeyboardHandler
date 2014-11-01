@@ -9,7 +9,9 @@
 #import "Demo.h"
 
 @interface Demo ()
-
+@property (strong, nonatomic) IBOutlet UITextField *textField1;
+@property (strong, nonatomic) IBOutlet UITextField *textField2;
+@property (strong, nonatomic) IBOutlet UITextField *textField3;
 @end
 
 @implementation Demo
