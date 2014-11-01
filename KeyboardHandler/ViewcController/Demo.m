@@ -1,21 +1,18 @@
 //
-//  Main.m
+//  Demo.m
 //  KeyboardHandler
 //
 //  Created by 581 on 2014/11/2.
 //  Copyright (c) 2014年 581. All rights reserved.
 //
 
-#import "Main.h"
+#import "Demo.h"
 
-@interface Main ()
-@property (strong, nonatomic) IBOutlet UITextField *textField1;
-@property (strong, nonatomic) IBOutlet UITextField *textField2;
-@property (strong, nonatomic) IBOutlet UITextField *textField3;
+@interface Demo ()
 
 @end
 
-@implementation Main
+@implementation Demo
 
 - (void)viewDidLoad {
     [super viewDidLoad];

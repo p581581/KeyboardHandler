@@ -14,6 +14,7 @@
 		E8FDB05B1A053DCD00B26A89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FDB0591A053DCD00B26A89 /* LaunchScreen.xib */; };
 		E8FDB0671A053DCD00B26A89 /* KeyboardHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB0661A053DCD00B26A89 /* KeyboardHandlerTests.m */; };
 		E8FDB0741A05492F00B26A89 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB0731A05492F00B26A89 /* Main.m */; };
+		E8FDB0791A054D7700B26A89 /* Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB0781A054D7700B26A89 /* Demo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E8FDB0661A053DCD00B26A89 /* KeyboardHandlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardHandlerTests.m; sourceTree = "<group>"; };
 		E8FDB0721A05492F00B26A89 /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
 		E8FDB0731A05492F00B26A89 /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
+		E8FDB0771A054D7700B26A89 /* Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.h; sourceTree = "<group>"; };
+		E8FDB0781A054D7700B26A89 /* Demo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 			children = (
 				E8FDB0721A05492F00B26A89 /* Main.h */,
 				E8FDB0731A05492F00B26A89 /* Main.m */,
+				E8FDB0771A054D7700B26A89 /* Demo.h */,
+				E8FDB0781A054D7700B26A89 /* Demo.m */,
 			);
 			path = ViewcController;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			files = (
 				E8FDB0501A053DCD00B26A89 /* AppDelegate.m in Sources */,
 				E8FDB04D1A053DCD00B26A89 /* main.m in Sources */,
+				E8FDB0791A054D7700B26A89 /* Demo.m in Sources */,
 				E8FDB0741A05492F00B26A89 /* Main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
