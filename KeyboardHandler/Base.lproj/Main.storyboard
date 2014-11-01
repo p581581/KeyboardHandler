@@ -1,25 +1,124 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="YYO-iz-uS4"/>
+                        <viewControllerLayoutGuide type="bottom" id="7ED-jN-9yf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1m-HI-MSA">
+                                <rect key="frame" x="35" y="117" width="250" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Try Navigation View Controller">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez0-eT-oC0">
+                                <rect key="frame" x="35" y="175" width="250" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Try Tab Bar View Controller">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNx-lm-8DD">
+                                <rect key="frame" x="35" y="233" width="250" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kOM-R0-OfV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Try Modal Segue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keyboar Handler Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E62-OE-Eja">
+                                <rect key="frame" x="35" y="49" width="250" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try Root View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4q-Pu-hc8">
+                                <rect key="frame" x="35" y="313" width="250" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="click me" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mAd-dz-vq0">
+                                <rect key="frame" x="35" y="371" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="click me" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-Dg-jT9">
+                                <rect key="frame" x="35" y="409" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="click me" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMS-87-5Ge">
+                                <rect key="frame" x="35" y="447" width="250" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s4q-Pu-hc8" secondAttribute="trailing" constant="35" id="0Nd-24-GWE"/>
+                            <constraint firstAttribute="centerY" secondItem="HNx-lm-8DD" secondAttribute="centerY" constant="26" id="0Q4-IH-PHg"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="u1m-HI-MSA" secondAttribute="width" id="1ee-cv-FOy"/>
+                            <constraint firstAttribute="trailing" secondItem="HNx-lm-8DD" secondAttribute="trailing" constant="35" id="20Y-jq-M0Y"/>
+                            <constraint firstItem="u1m-HI-MSA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="2XW-jD-xk7"/>
+                            <constraint firstAttribute="trailing" secondItem="aMS-87-5Ge" secondAttribute="trailing" constant="35" id="5PN-30-Min"/>
+                            <constraint firstItem="aMS-87-5Ge" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="6D1-RC-Nuu"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="top" secondItem="HNx-lm-8DD" secondAttribute="bottom" constant="30" id="6dY-I2-Dqf"/>
+                            <constraint firstItem="LaY-Dg-jT9" firstAttribute="top" secondItem="mAd-dz-vq0" secondAttribute="bottom" constant="8" id="8Mz-Uq-IOv"/>
+                            <constraint firstItem="ez0-eT-oC0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="8a4-Fb-LwP"/>
+                            <constraint firstAttribute="trailing" secondItem="E62-OE-Eja" secondAttribute="trailing" constant="35" id="8oF-Jc-1p5"/>
+                            <constraint firstItem="u1m-HI-MSA" firstAttribute="top" secondItem="E62-OE-Eja" secondAttribute="bottom" constant="18" id="Fh1-6k-6FV"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="HNx-lm-8DD" secondAttribute="width" id="G2T-dV-Ies"/>
+                            <constraint firstItem="mAd-dz-vq0" firstAttribute="top" secondItem="s4q-Pu-hc8" secondAttribute="bottom" constant="8" id="KBb-61-s0t"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="mAd-dz-vq0" secondAttribute="width" id="LiX-fQ-gKq"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="LaY-Dg-jT9" secondAttribute="width" id="TF3-bf-Bun"/>
+                            <constraint firstItem="E62-OE-Eja" firstAttribute="height" secondItem="ez0-eT-oC0" secondAttribute="height" id="VLl-aX-bsY"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="ez0-eT-oC0" secondAttribute="width" id="XCK-DE-RNG"/>
+                            <constraint firstItem="E62-OE-Eja" firstAttribute="height" secondItem="HNx-lm-8DD" secondAttribute="height" id="Xky-0c-h9O"/>
+                            <constraint firstItem="E62-OE-Eja" firstAttribute="height" secondItem="s4q-Pu-hc8" secondAttribute="height" id="Yui-MN-Mt1"/>
+                            <constraint firstAttribute="trailing" secondItem="LaY-Dg-jT9" secondAttribute="trailing" constant="35" id="cO3-Xy-8Rf"/>
+                            <constraint firstAttribute="trailing" secondItem="u1m-HI-MSA" secondAttribute="trailing" constant="35" id="dEA-ZB-swe"/>
+                            <constraint firstAttribute="trailing" secondItem="mAd-dz-vq0" secondAttribute="trailing" constant="35" id="eNm-N2-iu3"/>
+                            <constraint firstAttribute="trailing" secondItem="ez0-eT-oC0" secondAttribute="trailing" constant="35" id="eUJ-ZV-6DS"/>
+                            <constraint firstItem="LaY-Dg-jT9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="fak-p9-Qvq"/>
+                            <constraint firstItem="ez0-eT-oC0" firstAttribute="top" secondItem="u1m-HI-MSA" secondAttribute="bottom" constant="8" id="fis-rb-VQT"/>
+                            <constraint firstItem="HNx-lm-8DD" firstAttribute="top" secondItem="ez0-eT-oC0" secondAttribute="bottom" constant="8" id="gF7-kp-rGP"/>
+                            <constraint firstItem="E62-OE-Eja" firstAttribute="height" secondItem="u1m-HI-MSA" secondAttribute="height" id="iKb-gx-PGG"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="aMS-87-5Ge" secondAttribute="width" id="mhC-zs-aJ4"/>
+                            <constraint firstItem="HNx-lm-8DD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="nZZ-Fg-gJh"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="width" secondItem="E62-OE-Eja" secondAttribute="width" id="nxY-3g-Lym"/>
+                            <constraint firstItem="E62-OE-Eja" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="pOX-Ie-dCc"/>
+                            <constraint firstItem="mAd-dz-vq0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="s7D-Sc-Nih"/>
+                            <constraint firstItem="s4q-Pu-hc8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="35" id="tmQ-zw-R74"/>
+                            <constraint firstItem="aMS-87-5Ge" firstAttribute="top" secondItem="LaY-Dg-jT9" secondAttribute="bottom" constant="8" id="zQw-Xy-fuf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="316"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
