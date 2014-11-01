@@ -10,7 +10,7 @@
 
 @implementation KeyboardHandler {
     NSArray *_textFields;
-    UIViewController *targetVC;
+    UIView *targetView;
     UIView *editingTextField;
     CGRect keyboardRect;
     NSTimeInterval duration;
@@ -18,11 +18,11 @@
     BOOL isShowUp;
 }
 
-+ (KeyboardHandler *) handleWithTextFields: (NSArray *)textFields {
-    return [[KeyboardHandler alloc] initWithTextFields:textFields];
++ (KeyboardHandler *) handleWithView:(UIView *) view textFields: (NSArray *)textFields {
+    return [[KeyboardHandler alloc] initWithView:view textFields:textFields];
 }
 
-- (id)initWithTextFields:(NSArray *)textFields
+- (id)initWithView:(UIView *) view textFields:(NSArray *)textFields
 {
     self = [super init];
     if (self)
@@ -35,10 +35,10 @@
             t.delegate = self;
         }
         
-        targetVC = [self getVisibleViewController];
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Tap:)];
-        [targetVC.view addGestureRecognizer:singleTap];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+        [view addGestureRecognizer:singleTap];
         
+        targetView = view;
         _textFields = textFields;
         isShowUp = NO;
     }
@@ -55,10 +55,10 @@
     [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&duration];
     
     void (^action)(void) = ^{
-        CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetVC.view.frame.size.height;
-        CGRect rect = targetVC.view.frame;
+        CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetView.frame.size.height;
+        CGRect rect = targetView.frame;
         rect.origin.y = offsetY;
-        targetVC.view.frame = rect;
+        targetView.frame = rect;
     };
     
     [UIView animateWithDuration:duration - 0.0255 delay:0.0 options:curve animations:action completion:nil];
@@ -80,8 +80,8 @@
 - (void) textFieldDidBeginEditing:(UITextField *)textField {
     editingTextField = textField;
     
-    if (editingTextField.superview != targetVC.view) {
-        editingTextField = targetVC.view;
+    while (editingTextField.superview != targetView) {
+        editingTextField = editingTextField.superview;
     }
     
     if (isShowUp == YES) {
@@ -91,15 +91,23 @@
 
 - (void)viewWillScroll {
     
+    CGFloat keyboardHieght = keyboardRect.size.height;
     CGFloat viewCenterY = editingTextField.center.y;
-    CGFloat freeSpaceHeight = targetVC.view.frame.size.height - keyboardRect.size.height; // 352
-    CGFloat scrollAmount = freeSpaceHeight / 2.0 - viewCenterY - targetVC.view.frame.origin.y;
+    CGFloat freeSpaceHeight = targetView.frame.size.height - keyboardRect.size.height;
+    CGFloat scrollAmount = freeSpaceHeight / 2.0 - viewCenterY - targetView.frame.origin.y;
+    
+    if(scrollAmount < -keyboardHieght) scrollAmount = -keyboardHieght;
+    if (targetView.frame.origin.y + scrollAmount <= -keyboardHieght && scrollAmount < 0) {
+        scrollAmount = -keyboardHieght - targetView.frame.origin.y;
+    }
+    
+    NSLog(@"%lf, %lf, %lf, %lf", scrollAmount, keyboardRect.size.height, targetView.frame.size.height,targetView.bounds.size.height);
     
     [UIView animateWithDuration:0.2 delay:0.0 options:curve animations:
      ^{
-         CGRect rect = targetVC.view.frame;
+         CGRect rect = targetView.frame;
          rect.origin.y += scrollAmount;
-         targetVC.view.frame = rect;
+         targetView.frame = rect;
      }
     completion:nil];
 }
@@ -114,23 +122,9 @@
     return YES;
 }
 
-- (IBAction)Tap:(id)sender {
+- (IBAction)singleTap:(id)sender {
     for (UITextField* t in _textFields) {
         [t resignFirstResponder];
     }
-}
-
-- (UIViewController *)getVisibleViewController {
-    UIViewController *root = [[UIApplication sharedApplication] keyWindow].rootViewController;
-    
-    if ([root isKindOfClass:[UINavigationController class]] ) {
-        root = ((UINavigationController*) root).visibleViewController;
-    } else if([root isKindOfClass:[UITabBarController class]] ) {
-        root = ((UITabBarController*) root).selectedViewController;
-    } else if (root.presentedViewController) {
-        root = root.presentedViewController;
-    }
-    
-    return root;
 }
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "Demo.h"
+#import "KeyboardHandler.h"
 
-@interface Demo ()
+@interface Demo () {
+    KeyboardHandler *keyboardHandler;
+}
 @property (strong, nonatomic) IBOutlet UITextField *textField1;
 @property (strong, nonatomic) IBOutlet UITextField *textField2;
 @property (strong, nonatomic) IBOutlet UITextField *textField3;
@@ -19,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSArray *textFields = @[_textField1,
+                            _textField2,
+                            _textField3];
+    keyboardHandler = [KeyboardHandler handleWithView:self.view textFields:textFields];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,14 +34,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
 
 @end

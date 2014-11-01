@@ -7,8 +7,11 @@
 //
 
 #import "Main.h"
+#import "KeyboardHandler.h"
 
-@interface Main ()
+@interface Main () {
+    KeyboardHandler *keyboardHandler;
+}
 @property (strong, nonatomic) IBOutlet UITextField *textField1;
 @property (strong, nonatomic) IBOutlet UITextField *textField2;
 @property (strong, nonatomic) IBOutlet UITextField *textField3;
@@ -20,6 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSArray *textFields = @[_textField1,
+                            _textField2,
+                            _textField3];
+    keyboardHandler = [KeyboardHandler handleWithView:self.view textFields:textFields];
 }
 
 - (void)didReceiveMemoryWarning {
