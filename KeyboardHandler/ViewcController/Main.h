@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Main.h
 //  KeyboardHandler
 //
 //  Created by 581 on 2014/11/2.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface Main : UIViewController
 
 @end
-

@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		E8FDB04D1A053DCD00B26A89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB04C1A053DCD00B26A89 /* main.m */; };
 		E8FDB0501A053DCD00B26A89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB04F1A053DCD00B26A89 /* AppDelegate.m */; };
-		E8FDB0531A053DCD00B26A89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB0521A053DCD00B26A89 /* ViewController.m */; };
 		E8FDB0561A053DCD00B26A89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8FDB0541A053DCD00B26A89 /* Main.storyboard */; };
 		E8FDB0581A053DCD00B26A89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8FDB0571A053DCD00B26A89 /* Images.xcassets */; };
 		E8FDB05B1A053DCD00B26A89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FDB0591A053DCD00B26A89 /* LaunchScreen.xib */; };
 		E8FDB0671A053DCD00B26A89 /* KeyboardHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB0661A053DCD00B26A89 /* KeyboardHandlerTests.m */; };
+		E8FDB0741A05492F00B26A89 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDB0731A05492F00B26A89 /* Main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		E8FDB04C1A053DCD00B26A89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8FDB04E1A053DCD00B26A89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8FDB04F1A053DCD00B26A89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8FDB0511A053DCD00B26A89 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E8FDB0521A053DCD00B26A89 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E8FDB0551A053DCD00B26A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8FDB0571A053DCD00B26A89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E8FDB05A1A053DCD00B26A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E8FDB0601A053DCD00B26A89 /* KeyboardHandlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardHandlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FDB0651A053DCD00B26A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8FDB0661A053DCD00B26A89 /* KeyboardHandlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardHandlerTests.m; sourceTree = "<group>"; };
+		E8FDB0721A05492F00B26A89 /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
+		E8FDB0731A05492F00B26A89 /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +83,10 @@
 			children = (
 				E8FDB04E1A053DCD00B26A89 /* AppDelegate.h */,
 				E8FDB04F1A053DCD00B26A89 /* AppDelegate.m */,
-				E8FDB0511A053DCD00B26A89 /* ViewController.h */,
-				E8FDB0521A053DCD00B26A89 /* ViewController.m */,
 				E8FDB0541A053DCD00B26A89 /* Main.storyboard */,
 				E8FDB0571A053DCD00B26A89 /* Images.xcassets */,
 				E8FDB0591A053DCD00B26A89 /* LaunchScreen.xib */,
+				E8FDB0711A05492100B26A89 /* ViewcController */,
 				E8FDB04A1A053DCD00B26A89 /* Supporting Files */,
 			);
 			path = KeyboardHandler;
@@ -117,6 +116,15 @@
 				E8FDB0651A053DCD00B26A89 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8FDB0711A05492100B26A89 /* ViewcController */ = {
+			isa = PBXGroup;
+			children = (
+				E8FDB0721A05492F00B26A89 /* Main.h */,
+				E8FDB0731A05492F00B26A89 /* Main.m */,
+			);
+			path = ViewcController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8FDB0531A053DCD00B26A89 /* ViewController.m in Sources */,
 				E8FDB0501A053DCD00B26A89 /* AppDelegate.m in Sources */,
 				E8FDB04D1A053DCD00B26A89 /* main.m in Sources */,
+				E8FDB0741A05492F00B26A89 /* Main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +420,7 @@
 				E8FDB06C1A053DCD00B26A89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8FDB06D1A053DCD00B26A89 /* Build configuration list for PBXNativeTarget "KeyboardHandlerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +429,7 @@
 				E8FDB06F1A053DCD00B26A89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
