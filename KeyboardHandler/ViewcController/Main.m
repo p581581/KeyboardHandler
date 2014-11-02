@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *textField1;
 @property (strong, nonatomic) IBOutlet UITextField *textField2;
 @property (strong, nonatomic) IBOutlet UITextField *textField3;
-
+@property (strong, nonatomic) UITextField *textField4;
 @end
 
 @implementation Main
@@ -28,6 +28,14 @@
                             _textField2,
                             _textField3];
     keyboardHandler = [KeyboardHandler handleWithView:self.view textFields:textFields];
+    
+    CGFloat posx = (self.view.frame.size.width - 250) / 2;
+     _textField4 = [[UITextField alloc] initWithFrame:CGRectMake(posx, 30, 250, 30)];
+    _textField4.backgroundColor = [UIColor whiteColor];
+    _textField4.placeholder = @"click me";
+    [self.view addSubview:_textField4];
+    [keyboardHandler addTextField:_textField4];
+    
 }
 
 - (void)didReceiveMemoryWarning {
