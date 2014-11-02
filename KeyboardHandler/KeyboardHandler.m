@@ -3,7 +3,7 @@
 //  KeyboardHandler demo
 //
 //  Created by 581 on 2014/8/21.
-//  Copyright (c) 2014年 Erdo. All rights reserved.
+//  Copyright (c) 2014年 581. All rights reserved.
 //
 
 #import "KeyboardHandler.h"
@@ -13,7 +13,6 @@
     UIView *targetView;
     UIView *editingTextField;
     CGRect keyboardRect;
-    NSTimeInterval duration;
     UIViewAnimationOptions curve;
     BOOL isShowUp;
 }
@@ -49,28 +48,23 @@
 {
     isShowUp = NO;
     NSDictionary *info = [notification userInfo];
-
     [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
-
-    [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&duration];
+    
+    CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetView.frame.size.height;
     
     void (^action)(void) = ^{
-        CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetView.frame.size.height;
         CGRect rect = targetView.frame;
         rect.origin.y = offsetY;
         targetView.frame = rect;
     };
     
-    [UIView animateWithDuration:duration - 0.0255 delay:0.0 options:curve animations:action completion:nil];
+    [UIView animateWithDuration: 0.0008 * fabsf(offsetY) delay:0.0 options:curve animations:action completion:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
 {
     NSDictionary *info = [notification userInfo];
     [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
-    
-    [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&duration];
-    
     [[info objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
     
     [self viewWillScroll];
@@ -92,22 +86,26 @@
 - (void)viewWillScroll {
     
     CGFloat keyboardHieght = keyboardRect.size.height;
-    CGFloat viewCenterY = editingTextField.center.y;
-    CGFloat freeSpaceHeight = targetView.frame.size.height - keyboardRect.size.height;
-    CGFloat scrollAmount = freeSpaceHeight / 2.0 - viewCenterY - targetView.frame.origin.y;
+    CGFloat targetViewHieght = targetView.frame.size.height;
+    
+    CGFloat targetViewY = targetView.frame.origin.y;
+    CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetViewHieght;
+    
+    CGFloat freeSpaceHeight = targetViewHieght - keyboardHieght;
+    CGFloat scrollAmount = freeSpaceHeight / 2.0 - editingTextField.center.y - targetViewY;
     
     if(scrollAmount < -keyboardHieght) scrollAmount = -keyboardHieght;
-    if (targetView.frame.origin.y + scrollAmount <= -keyboardHieght && scrollAmount < 0) {
-        scrollAmount = -keyboardHieght - targetView.frame.origin.y;
+    else if (targetViewY - offsetY + scrollAmount < -keyboardHieght && scrollAmount < 0) {
+        scrollAmount = -keyboardHieght - targetViewY + offsetY;
     }
     
-    [UIView animateWithDuration:0.2 delay:0.0 options:curve animations:
+    [UIView animateWithDuration:0.0008 * fabsf(scrollAmount) delay:0.0 options:curve animations:
      ^{
          CGRect rect = targetView.frame;
          rect.origin.y += scrollAmount;
          targetView.frame = rect;
      }
-    completion:nil];
+                     completion:nil];
 }
 
 -(void) dealloc {
