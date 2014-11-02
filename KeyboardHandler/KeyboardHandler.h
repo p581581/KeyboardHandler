@@ -12,5 +12,6 @@
 @interface KeyboardHandler : NSObject<UITextFieldDelegate>
 
 + (KeyboardHandler *) handleWithView:(UIView *) view textFields: (NSArray *)textFields;
+- (void) addTextField: (UITextField *) textField;
 
 @end

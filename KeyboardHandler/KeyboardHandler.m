@@ -9,7 +9,7 @@
 #import "KeyboardHandler.h"
 
 @implementation KeyboardHandler {
-    NSArray *_textFields;
+    NSMutableArray *_textFields;
     UIView *targetView;
     UIView *editingTextField;
     CGRect keyboardRect;
@@ -38,10 +38,15 @@
         [view addGestureRecognizer:singleTap];
         
         targetView = view;
-        _textFields = textFields;
+        _textFields = [NSMutableArray arrayWithArray:textFields];
         isShowUp = NO;
     }
     return self;
+}
+
+- (void) addTextField: (UITextField *) textField {
+    textField.delegate = self;
+    [_textFields addObject:textField];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
