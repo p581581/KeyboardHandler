@@ -32,3 +32,9 @@ NSArray *textFields = @[_textField1,
     
 keyboardHandler = [KeyboardHandler handleWithView:self.view textFields:textFields];
 ```
+
+#### Add text field programmingly
+
+```objective-c
+[keyboardHandler addTextField: textField];
+```
