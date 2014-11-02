@@ -99,9 +99,12 @@
     CGFloat freeSpaceHeight = targetViewHieght - keyboardHieght;
     CGFloat scrollAmount = freeSpaceHeight / 2.0 - editingTextField.center.y - targetViewY;
     
-    if(scrollAmount < -keyboardHieght) scrollAmount = -keyboardHieght;
-    else if (targetViewY - offsetY + scrollAmount < -keyboardHieght && scrollAmount < 0) {
+    if(scrollAmount < -keyboardHieght) {
+        scrollAmount = -keyboardHieght;
+    } else if (targetViewY - offsetY + scrollAmount < -keyboardHieght && scrollAmount < 0) {
         scrollAmount = -keyboardHieght - targetViewY + offsetY;
+    } else if ( targetViewY - offsetY + scrollAmount > 0 && scrollAmount > 0) {
+        scrollAmount = offsetY - targetViewY;
     }
     
     [UIView animateWithDuration:0.0008 * fabsf(scrollAmount) delay:0.0 options:curve animations:
