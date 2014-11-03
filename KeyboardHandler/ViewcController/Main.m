@@ -27,7 +27,7 @@
     NSArray *textFields = @[_textField1,
                             _textField2,
                             _textField3];
-    keyboardHandler = [KeyboardHandler handleWithView:self.view textFields:textFields];
+    keyboardHandler = [KeyboardHandler handleWithViewController:self textFields:textFields];
     
     CGFloat posx = (self.view.frame.size.width - 250) / 2;
      _textField4 = [[UITextField alloc] initWithFrame:CGRectMake(posx, 30, 250, 30)];

@@ -11,17 +11,18 @@
 @implementation KeyboardHandler {
     NSMutableArray *_textFields;
     UIView *targetView;
+    UIViewController *targetVC;
     UIView *editingTextField;
     CGRect keyboardRect;
     UIViewAnimationOptions curve;
     BOOL isShowUp;
 }
 
-+ (KeyboardHandler *) handleWithView:(UIView *) view textFields: (NSArray *)textFields {
-    return [[KeyboardHandler alloc] initWithView:view textFields:textFields];
++ (KeyboardHandler *) handleWithViewController:(UIViewController *) vc textFields: (NSArray *)textFields {
+    return [[KeyboardHandler alloc] initWithViewController:vc textFields:textFields];
 }
 
-- (id)initWithView:(UIView *) view textFields:(NSArray *)textFields
+- (id)initWithViewController:(UIViewController *) vc textFields:(NSArray *)textFields
 {
     self = [super init];
     if (self)
@@ -35,9 +36,10 @@
         }
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
-        [view addGestureRecognizer:singleTap];
+        [vc.view addGestureRecognizer:singleTap];
         
-        targetView = view;
+        targetView = vc.view;
+        targetVC = vc;
         _textFields = [NSMutableArray arrayWithArray:textFields];
         isShowUp = NO;
     }
@@ -57,6 +59,10 @@
     
     CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetView.frame.size.height;
     
+    if (targetVC.navigationController && [[UIApplication sharedApplication] statusBarFrame].size.height == 40) {
+        offsetY -= 20;
+    }
+        
     void (^action)(void) = ^{
         CGRect rect = targetView.frame;
         rect.origin.y = offsetY;

@@ -343,7 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eP-A0-iT5">
-                                <rect key="frame" x="35" y="450" width="250" height="50"/>
+                                <rect key="frame" x="35" y="518" width="250" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8eP-A0-iT5" secondAttribute="height" multiplier="5:1" id="RGJ-BB-n8f"/>
@@ -369,7 +369,7 @@
                             <constraint firstItem="AZt-nB-gJY" firstAttribute="leading" secondItem="IDA-CZ-Mu7" secondAttribute="leading" constant="35" id="Pz7-fG-7YT"/>
                             <constraint firstItem="KoY-ej-kvB" firstAttribute="width" secondItem="KoY-ej-kvB" secondAttribute="height" multiplier="5:1" id="S0L-eH-VsG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AZt-nB-gJY" secondAttribute="trailing" constant="19" id="SjI-11-7TG"/>
-                            <constraint firstItem="dur-nY-bs2" firstAttribute="top" secondItem="8eP-A0-iT5" secondAttribute="bottom" constant="68" id="UPi-H9-c0I"/>
+                            <constraint firstItem="dur-nY-bs2" firstAttribute="top" secondItem="8eP-A0-iT5" secondAttribute="bottom" id="UPi-H9-c0I"/>
                             <constraint firstItem="AZt-nB-gJY" firstAttribute="top" secondItem="9ol-bo-Db7" secondAttribute="bottom" constant="8" id="UtQ-tW-7Du"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8eP-A0-iT5" secondAttribute="trailing" constant="19" id="Uxj-q4-ZR9"/>
                             <constraint firstItem="RFe-vR-cvT" firstAttribute="top" secondItem="KoY-ej-kvB" secondAttribute="bottom" constant="54" id="ZDU-le-Gbr"/>
