@@ -30,7 +30,7 @@ NSArray *textFields = @[_textField1,
                         _textField2,
                         _textField3];
     
-keyboardHandler = [KeyboardHandler handleWithView:self.view textFields:textFields];
+keyboardHandler = [KeyboardHandler handleWithViewController:self textFields:textFields];
 ```
 
 #### Add text field programmingly
