@@ -62,7 +62,7 @@
     if (targetVC.navigationController && [[UIApplication sharedApplication] statusBarFrame].size.height == 40) {
         offsetY -= 20;
     }
-        
+    
     void (^action)(void) = ^{
         CGRect rect = targetView.frame;
         rect.origin.y = offsetY;
@@ -102,12 +102,18 @@
     CGFloat targetViewY = targetView.frame.origin.y;
     CGFloat offsetY = [[UIScreen mainScreen] bounds].size.height - targetViewHieght;
     
+    if (targetVC.navigationController && [[UIApplication sharedApplication] statusBarFrame].size.height == 40) {
+        offsetY -= 20;
+    }
+    
     CGFloat freeSpaceHeight = targetViewHieght - keyboardHieght;
     CGFloat scrollAmount = freeSpaceHeight / 2.0 - editingTextField.center.y - targetViewY;
     
     if(scrollAmount < -keyboardHieght) {
         scrollAmount = -keyboardHieght;
-    } else if (targetViewY - offsetY + scrollAmount < -keyboardHieght && scrollAmount < 0) {
+    }
+    
+    if (targetViewY - offsetY + scrollAmount < -keyboardHieght && scrollAmount < 0) {
         scrollAmount = -keyboardHieght - targetViewY + offsetY;
     } else if ( targetViewY - offsetY + scrollAmount > 0 && scrollAmount > 0) {
         scrollAmount = offsetY - targetViewY;
